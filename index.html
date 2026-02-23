@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Expense</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <h1 style="text-align:center;">Add Expense</h1>
+
+    <div class="form-card">
+
+        <label>Amount (₹)</label>
+        <input type="number" id="amount">
+
+        <label>Category</label>
+        <select id="category">
+            <option value="">Select</option>
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Bills</option>
+            <option>Shopping</option>
+            <option>Health</option>
+            <option>Entertainment</option>
+        </select>
+
+        <label>Date</label>
+        <input type="date" id="date">
+
+        <label>Language</label>
+        <select id="language">
+            <option value="en-US">English</option>
+            <option value="hi-IN">Hindi</option>
+            <option value="kn-IN">Kannada</option>
+            <option value="ta-IN">Tamil</option>
+            <option value="te-IN">Telugu</option>
+        </select>
+
+        <label>Note</label>
+        <div class="note-container">
+            <input type="text" id="note" placeholder="Speak or type note...">
+            <button type="button" id="micBtn" class="mic-btn">
+                🎤
+            </button>
+        </div>
+
+        <button type="button" onclick="addExpense()">+ Add Expense</button>
+    </div>
+
+    <div class="recent-section">
+        <h2>
+            Recent Expenses
+            <button id="toggleBtn" onclick="toggleHistory()">Show</button>
+        </h2>
+        <div id="historyBox" style="display:none;">
+            <div id="expenseList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- SUMMARY CARDS -->
+    <div class="cards">
+        <div class="card">
+            <h4>Total Spent</h4>
+            <p id="totalSpent">₹0</p>
+        </div>
+
+        <div class="card">
+            <h4>Transactions</h4>
+            <p id="totalTransactions">0</p>
+        </div>
+
+        <div class="card">
+            <h4>Avg / Transaction</h4>
+            <p id="avgTransaction">₹0</p>
+        </div>
+
+        <div class="card">
+            <h4>Health Score</h4>
+            <p id="healthScore">100</p>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- CHARTS -->
+    <div class="charts">
+        <div class="chart-box">
+            <h3>Category Distribution</h3>
+            <canvas id="pieChart"></canvas>
+        </div>
+
+        <div class="chart-box">
+            <h3>Monthly Spending</h3>
+            <canvas id="barChart"></canvas>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+
+============================
+
+</html>
